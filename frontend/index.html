@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pinboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">P</span>
+        <span>Pinboard</span>
+      </div>
+      <span id="greeting" class="greeting"></span>
+    </header>
+
+    <main>
+      <section class="profile-card" aria-labelledby="profile-title">
+        <h2 id="profile-title">Your profile</h2>
+        <form id="profile-form" novalidate>
+          <div class="row">
+            <label>
+              Username
+              <input id="userId" name="userId" required maxlength="64" pattern="[A-Za-z0-9_.\-]+" placeholder="e.g. laurel_s" />
+            </label>
+            <button type="button" id="load-btn" class="btn secondary">Load</button>
+          </div>
+          <div class="grid">
+            <label>
+              Display name
+              <input id="displayName" name="displayName" maxlength="100" />
+            </label>
+            <label>
+              Email
+              <input id="email" name="email" type="email" maxlength="254" />
+            </label>
+            <label class="wide">
+              Bio
+              <textarea id="bio" name="bio" rows="2" maxlength="500"></textarea>
+            </label>
+            <label class="wide">
+              Interests <small>(comma separated)</small>
+              <input id="interests" name="interests" placeholder="travel, food, architecture" />
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit" id="save-btn" class="btn primary">Save profile</button>
+            <span id="profile-status" class="status" role="status"></span>
+          </div>
+        </form>
+      </section>
+
+      <section aria-label="Image feed">
+        <div id="feed" class="feed"></div>
+        <div id="feed-status" class="feed-status" role="status"></div>
+        <div id="sentinel" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

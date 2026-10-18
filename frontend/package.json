@@ -1,0 +1,16 @@
+{
+  "name": "pinterest-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site hosted on S3: profile form + infinite scroll feed",
+  "scripts": {
+    "build": "esbuild src/app.ts --bundle --target=es2020 --outfile=app.js",
+    "watch": "esbuild src/app.ts --bundle --target=es2020 --outfile=app.js --watch",
+    "typecheck": "tsc --noEmit",
+    "serve": "npx --yes serve -l 5173 ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.2"
+  }
+}

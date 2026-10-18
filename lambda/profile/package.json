@@ -1,0 +1,22 @@
+{
+  "name": "pinterest-profile-lambda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lambda that creates/updates/reads user profiles in DynamoDB",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.js",
+    "zip": "cd dist && zip -q -r ../function.zip index.js",
+    "package": "npm run build && npm run zip",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.712.0",
+    "@aws-sdk/lib-dynamodb": "^3.712.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.146",
+    "@types/node": "^20.17.10",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.2"
+  }
+}
